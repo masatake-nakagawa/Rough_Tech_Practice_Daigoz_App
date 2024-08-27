@@ -25,6 +25,9 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     @Query("SELECT MAX(u.userId) FROM UserInfo u")
     Long findMaxUserId();
 
-    @Query("SELECT u FROM UserInfo u WHERE u.mail = :mail") // 修正
-    UserInfo findByEmail(@Param("mail") String mail); // 修正
+    @Query("SELECT u FROM UserInfo u WHERE u.mail = :mail")
+    UserInfo findByEmail(@Param("mail") String mail);
+
+    // ユーザー情報を削除するメソッドを追加
+    void deleteById(Long userId);
 }

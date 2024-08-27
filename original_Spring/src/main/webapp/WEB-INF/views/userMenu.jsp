@@ -35,7 +35,7 @@
       <a href="changePassword" class="btn">パスワード変更</a>
     </p>
     <p>
-      <a href="<%= request.getContextPath() %>/withdrawl" class="btn">退会</a>
+      <a href="withdrawl" class="btn">退会</a>
     </p>
   </div>
   <form action="logout" method="post">

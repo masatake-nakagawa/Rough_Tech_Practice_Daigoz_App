@@ -1,20 +1,51 @@
 package jp.co.hoge.web.controller;
 
-import java.io.IOException;
+import javax.servlet.http.HttpSession;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@WebServlet("/withdrawl")
-public class WithdrawlController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+import jp.co.hoge.web.service.UserService;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("withdrawl.jsp").forward(request, response);
+@Controller
+@RequestMapping("/withdrawl")
+public class WithdrawlController {
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping
+    public String showWithdrawlPage() {
+        return "withdrawl"; // withdrawl.jspを表示
+    }
+
+    @PostMapping("/withdrawlResult")
+    public String withdrawl(HttpSession session) {
+        // ログインユーザーの情報を取得
+        Long userId = (Long) session.getAttribute("userId");
+
+        // userIdがnullでないことを確認
+        if (userId != null) {
+            // ユーザー情報をデータベースから削除
+            userService.deleteUser(userId);
+
+            // セッションを無効化
+            session.invalidate();
+
+            // 退会後のリダイレクト先を指定
+            return "redirect:/withdrawlResult";
+        }
+
+        // userIdがnullの場合のリダイレクト先を指定
+        return "redirect:/userMenu";
+    }
+
+    @GetMapping("/withdrawlResult")
+    public String showWithdrawlResultPage() {
+        return "withdrawlResult"; // withdrawlResult.jspを表示
     }
 }
 
