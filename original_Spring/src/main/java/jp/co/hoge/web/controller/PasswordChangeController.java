@@ -51,4 +51,9 @@ public class PasswordChangeController {
 
         return "redirect:/passChangeResult";
     }
+
+    @GetMapping("/passChangeResult")
+    public String showPassChangeResult() {
+        return "passChangeResult";
+    }
 }
