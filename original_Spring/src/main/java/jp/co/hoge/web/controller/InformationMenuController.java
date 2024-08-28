@@ -96,6 +96,21 @@ public class InformationMenuController {
         return "scheduleList";
     }
 
+    @GetMapping("/eventResponse")
+    public String eventResponse(@RequestParam("eventId") int eventId, Model model) {
+        if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
+            return "redirect:/index";
+        }
+
+        // int 型の eventId を Long 型に変換
+        Long eventIdLong = Long.valueOf(eventId);
+
+        Event event = eventService.getEventById(eventIdLong);
+        model.addAttribute("event", event);
+
+        return "scheduleResponseList";
+    }
+
 
 }
 
