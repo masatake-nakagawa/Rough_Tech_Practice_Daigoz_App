@@ -29,16 +29,16 @@
           <button type="submit" class="btn">イベント登録</button>
         </form>
       </p>
-      <p>
-        <a href="eventEdit" class="btn">イベント編集</a>
-      </p>
+     <p>
+  <a href="scheduleView" class="btn">イベント編集</a>
+</p>
     <% } %>
+   <p>
+  <a href="scheduleView" class="btn">イベント出欠回答</a>
+</p>
     <p>
-      <a href="eventResponse" class="btn">イベント出欠回答</a>
-    </p>
-    <p>
-      <a href="scheduleView" class="btn">スケジュール表示</a>
-    </p>
+  <a href="scheduleView" class="btn">スケジュール表示</a>
+</p>
   </div>
   <form action="logout" method="post">
     <button type="submit" class="btn logout-btn">ログアウト</button>

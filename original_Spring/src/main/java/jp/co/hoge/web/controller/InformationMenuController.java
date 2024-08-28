@@ -80,6 +80,22 @@ public class InformationMenuController {
 
         return "insertInformationResult";
     }
+    @GetMapping("/scheduleView")
+    public String scheduleView(Model model) {
+        if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
+            return "redirect:/index";
+        }
+
+        List<Event> events = eventService.getAllEvents();
+        model.addAttribute("events", events);
+
+        String roleIdStr = (String) session.getAttribute("role_id");
+        int roleId = Integer.parseInt(roleIdStr);
+        model.addAttribute("roleId", roleId);
+
+        return "scheduleList";
+    }
+
 
 }
 
