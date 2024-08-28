@@ -25,21 +25,21 @@ public class WithdrawlController {
     @PostMapping("/withdrawlResult")
     public String withdrawl(HttpSession session) {
         // ログインユーザーの情報を取得
-        Long userId = (Long) session.getAttribute("userId");
+        String loginId = (String) session.getAttribute("login_id");
 
-        // userIdがnullでないことを確認
-        if (userId != null) {
+        // loginIdがnullでないことを確認
+        if (loginId != null) {
             // ユーザー情報をデータベースから削除
-            userService.deleteUser(userId);
+            userService.deleteUserByLoginId(loginId);
 
             // セッションを無効化
             session.invalidate();
 
             // 退会後のリダイレクト先を指定
-            return "redirect:/withdrawlResult";
+            return "redirect:/withdrawl/withdrawlResult";
         }
 
-        // userIdがnullの場合のリダイレクト先を指定
+        // loginIdがnullの場合のリダイレクト先を指定
         return "redirect:/userMenu";
     }
 
@@ -48,4 +48,6 @@ public class WithdrawlController {
         return "withdrawlResult"; // withdrawlResult.jspを表示
     }
 }
+
+
 

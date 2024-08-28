@@ -30,4 +30,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
 
     // ユーザー情報を削除するメソッドを追加
     void deleteById(Long userId);
+
+    // loginIdを使用してユーザー情報を削除するメソッドを追加
+    void deleteByLoginId(String loginId);
 }
