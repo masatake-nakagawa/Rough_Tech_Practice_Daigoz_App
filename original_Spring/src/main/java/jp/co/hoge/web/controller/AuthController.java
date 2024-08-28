@@ -42,7 +42,7 @@ public class AuthController {
             model.addAttribute("errorMessage", "IDまたはPASSが間違っています");
             return "login";
         }
-
+        session.setAttribute("user_id", user.getUserId()); 
         session.setAttribute("login_id", loginId); // ここでlogin_idをセッションに設定
         session.setAttribute("user_name", user.getUserName());
         session.setAttribute("role_id", String.valueOf(user.getRole().getRoleId()));

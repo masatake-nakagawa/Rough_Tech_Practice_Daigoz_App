@@ -34,12 +34,12 @@
           <td>${event.text}</td>
           <td>${event.number}</td>
           <td>
-            <a href="eventResponse?eventId=${event.event_id}" class="btn">出欠回答</a>
-            <c:if test="${roleId == 1}">
-              <a href="eventEdit?eventId=${event.event_id}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="btn">編集</a>
-              <a href="eventAttendance?eventId=${event.event_id}" class="btn">出欠確認</a>
-            </c:if>
-          </td>
+  <a href="eventResponse?eventId=${event.event_id}" class="btn">出欠回答</a>
+  <c:if test="${roleId == 1}">
+    <a href="eventEdit?eventId=${event.event_id}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="btn">編集</a>
+    <a href="eventAttendance?eventId=${event.event_id}" class="btn">出欠確認</a>
+  </c:if>
+</td>
         </tr>
       </c:forEach>
     </tbody>
