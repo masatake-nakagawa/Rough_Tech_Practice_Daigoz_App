@@ -162,6 +162,27 @@ public class InformationMenuController {
 
         return "attendanceList";
     }
+    @GetMapping("/eventAttendance")
+    public String eventAttendance(@RequestParam("eventId") Long eventId, Model model) {
+        if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
+            return "redirect:/index";
+        }
 
+        List<Attendance> attendanceList = attendanceService.getAttendancesByEventId(eventId);
+        model.addAttribute("attendanceList", attendanceList);
 
+        return "attendanceList";
+    }
+    @GetMapping("/editEvent")
+    public String editEvent(@RequestParam("eventId") Long eventId, @RequestParam("dateAndTime") String dateAndTime, Model model) {
+        if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
+            return "redirect:/index";
+        }
+
+        Event event = eventService.getEventById(eventId);
+        model.addAttribute("event", event);
+
+        return "eventEdit";
+    }
 }
+

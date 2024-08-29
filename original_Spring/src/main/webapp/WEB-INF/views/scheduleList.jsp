@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +20,7 @@
         <th>場所</th>
         <th>詳細</th>
         <th>人数</th>
-        <th>出欠確認</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -30,7 +32,13 @@
           <td>${event.venue}</td>
           <td>${event.text}</td>
           <td>${event.number}</td>
-          <td><a href="attendanceList?eventId=${event.eventId}" class="btn">出欠確認</a></td>
+          <td>
+            <a href="eventResponse?eventId=${event.eventId}" class="btn">出欠回答</a>
+            <c:if test="${roleId == 1}">
+              <a href="editEvent?eventId=${event.eventId}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="btn">編集</a>            
+              <a href="eventAttendance?eventId=${event.eventId}" class="btn">出欠確認</a>
+            </c:if>
+          </td>
         </tr>
       </c:forEach>
     </tbody>

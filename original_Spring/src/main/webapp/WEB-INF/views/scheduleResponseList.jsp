@@ -77,16 +77,16 @@ function submitResponses() {
     </thead>
     <tbody>
       <c:forEach var="event" items="${events}">
-        <tr class="event-row" data-event-id="${event.event_id}">
-          <td>${event.event_id}</td>
+        <tr class="event-row" data-event-id="${event.eventId}">
+          <td>${event.eventId}</td>
           <td>${event.eventName}</td>
           <td>${event.dateAndTime}</td>
           <td>${event.venue}</td>
           <td>${event.text}</td>
           <td>${event.number}</td>
-          <td><button class="response-btn btn" data-event-id="${event.event_id}" onclick="toggleButton(this, ${event.event_id})">参加</button></td>
-          <td><button class="response-btn btn" data-event-id="${event.event_id}" onclick="toggleButton(this, ${event.event_id})">不参加</button></td>
-          <td><button class="response-btn btn" data-event-id="${event.event_id}" onclick="toggleButton(this, ${event.event_id})">保留</button></td>
+          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">参加</button></td>
+          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">不参加</button></td>
+          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">保留</button></td>
         </tr>
       </c:forEach>
     </tbody>
