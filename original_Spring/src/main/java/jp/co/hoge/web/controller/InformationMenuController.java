@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -128,13 +129,20 @@ public class InformationMenuController {
     public String submitResponses(@RequestParam("responses") String responsesJson) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            List<Attendance> responses = objectMapper.readValue(responsesJson, new TypeReference<List<Attendance>>() {});
+            List<Map<String, String>> responses = objectMapper.readValue(responsesJson, new TypeReference<List<Map<String, String>>>() {});
 
             Long userId = (Long) session.getAttribute("user_id"); // セッションからuser_idを取得
 
-            for (Attendance response : responses) {
-                response.setUserId(userId); // user_idを設定
-                attendanceService.saveAttendance(response);
+            for (Map<String, String> response : responses) {
+                Long eventId = Long.valueOf(response.get("eventId"));
+                String status = response.get("status");
+
+                Attendance attendance = new Attendance();
+                attendance.setEventId(eventId);
+                attendance.setUserId(userId);
+                attendance.setStatus(status);
+
+                attendanceService.saveAttendance(attendance);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,4 +151,17 @@ public class InformationMenuController {
 
         return "responseResult";
     }
+    @GetMapping("/attendanceList")
+    public String attendanceList(@RequestParam("eventId") Long eventId, Model model) {
+        if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
+            return "redirect:/index";
+        }
+
+        List<Attendance> attendanceList = attendanceService.getAttendancesByEventId(eventId);
+        model.addAttribute("attendanceList", attendanceList);
+
+        return "attendanceList";
+    }
+
+
 }

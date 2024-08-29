@@ -11,10 +11,8 @@ import jp.co.hoge.web.entity.Event;
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
 
-    @Query("SELECT COALESCE(MAX(e.event_id), 0) FROM Event e")
+    @Query("SELECT COALESCE(MAX(e.eventId), 0) FROM Event e")
     int findMaxEventId();
 
     List<Event> findAll();
 }
-
-

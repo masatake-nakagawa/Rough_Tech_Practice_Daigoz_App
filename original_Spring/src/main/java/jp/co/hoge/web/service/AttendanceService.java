@@ -1,5 +1,7 @@
 package jp.co.hoge.web.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +17,13 @@ public class AttendanceService {
     public void saveAttendance(Attendance attendance) {
         attendanceRepository.save(attendance);
     }
+
+    public List<Attendance> getAllAttendances() {
+        return attendanceRepository.findAll();
+    }
+
+    public List<Attendance> getAttendancesByEventId(Long eventId) {
+        return attendanceRepository.findByEventId(eventId);
+    }
 }
+

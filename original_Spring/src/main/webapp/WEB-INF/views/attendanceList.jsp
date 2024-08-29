@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -10,26 +9,22 @@
 </head>
 <body>
   <div class="header">出欠一覧</div>
-  <c:if test="${not empty userList}">
+  <c:if test="${not empty attendanceList}">
     <table>
-      <caption>ユーザー一覧</caption>
+      <caption>出欠一覧</caption>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>名前</th>
-          <th>TEL</th>
-          <th>MAIL</th>
-          <th>権限</th>
+          <th>イベントID</th>
+          <th>ユーザーID</th>
+          <th>ステータス</th>
         </tr>
       </thead>
       <tbody>
-        <c:forEach var="userInfo" items="${userList}">
+        <c:forEach var="attendance" items="${attendanceList}">
           <tr>
-            <td>${userInfo.loginId}</td>
-            <td>${userInfo.userName}</td>
-            <td>${userInfo.telephone}</td>
-            <td>${userInfo.mail}</td> <!-- メールアドレスを表示 -->
-            <td>${userInfo.role.roleName}</td> <!-- 権限を表示 -->
+            <td>${attendance.eventId}</td>
+            <td>${attendance.userId}</td>
+            <td>${attendance.status}</td>
           </tr>
         </c:forEach>
       </tbody>

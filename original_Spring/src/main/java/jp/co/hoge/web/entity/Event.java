@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Event {
 
     @Id
-    private Long event_id; // 修正
+    private Long eventId; // 修正
     private String eventName;
     private Timestamp dateAndTime;
     private String venue;
@@ -19,8 +19,8 @@ public class Event {
     // コンストラクタ
     public Event() {}
 
-    public Event(Long event_id, String eventName, Timestamp dateAndTime, String venue, String text, int number) {
-        this.event_id = event_id;
+    public Event(Long eventId, String eventName, Timestamp dateAndTime, String venue, String text, int number) {
+        this.eventId = eventId;
         this.eventName = eventName;
         this.dateAndTime = dateAndTime;
         this.venue = venue;
@@ -37,12 +37,12 @@ public class Event {
     }
 
     // ゲッターとセッター
-    public Long getEvent_id() {
-        return event_id;
+    public Long getEventId() {
+        return eventId;
     }
 
-    public void setEvent_id(Long event_id) {
-        this.event_id = event_id;
+    public void setEventId(Long eventId) {
+        this.eventId = eventId;
     }
 
     public String getEventName() {
@@ -85,5 +85,3 @@ public class Event {
         this.number = number;
     }
 }
-
-
