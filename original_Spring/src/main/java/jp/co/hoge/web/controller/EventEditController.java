@@ -25,8 +25,8 @@ public class EventEditController {
     @Autowired
     private EventService eventService;
 
-    @GetMapping("/eventEdit")
-    public String eventEdit(@RequestParam("eventId") Long eventId, @RequestParam("dateAndTime") String dateAndTime, Model model) {
+    @GetMapping("/editEvent")
+    public String editEvent(@RequestParam("eventId") Long eventId, @RequestParam("dateAndTime") String dateAndTime, Model model) {
         if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
             return "redirect:/index";
         }
@@ -45,8 +45,9 @@ public class EventEditController {
         }
         model.addAttribute("event", event);
 
-        return "informationEditing";
+        return "eventEdit"; // ここで適切なビュー名を返す
     }
+
 
     @PostMapping("/updateEvent")
     public String updateEvent(@RequestParam("eventId") Long eventId, @RequestParam("eventName") String eventName,

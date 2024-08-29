@@ -24,24 +24,24 @@
       </tr>
     </thead>
     <tbody>
-      <c:forEach var="event" items="${events}">
-        <tr>
-          <td>${event.eventId}</td>
-          <td>${event.eventName}</td>
-          <td>${event.dateAndTime}</td>
-          <td>${event.venue}</td>
-          <td>${event.text}</td>
-          <td>${event.number}</td>
-          <td>
-            <a href="eventResponse?eventId=${event.eventId}" class="btn">出欠回答</a>
-            <c:if test="${roleId == 1}">
-              <a href="editEvent?eventId=${event.eventId}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="btn">編集</a>            
-              <a href="eventAttendance?eventId=${event.eventId}" class="btn">出欠確認</a>
-            </c:if>
-          </td>
-        </tr>
-      </c:forEach>
-    </tbody>
+  <c:forEach var="event" items="${events}">
+    <tr>
+      <td>${event.eventId}</td>
+      <td>${event.eventName}</td>
+      <td>${event.dateAndTime}</td>
+      <td>${event.venue}</td>
+      <td>${event.text}</td>
+      <td>${event.number}</td>
+      <td>
+        <a href="eventResponse?eventId=${event.eventId}" class="btn">出欠回答</a>
+        <c:if test="${roleId == 1}">
+          <a href="editEventInfo?eventId=${event.eventId}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="btn">編集</a>                                      
+          <a href="eventAttendance?eventId=${event.eventId}" class="btn">出欠確認</a>
+        </c:if>
+      </td>
+    </tr>
+  </c:forEach>
+</tbody>
   </table>
   <div>
     <a href="informationMenu" class="btn">情報共有メニューへ戻る</a>

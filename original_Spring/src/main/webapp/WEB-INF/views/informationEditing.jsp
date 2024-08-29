@@ -17,7 +17,7 @@
     <p class="error">${errorMessage}</p>
   </c:if>
 <form action="updateEvent" method="post">
-    <input type="hidden" name="eventId" value="${event.event_id}">
+    <input type="hidden" name="eventId" value="${event.eventId}">
     <fieldset class="label-60">
       <div>
         <label class="required">イベント名</label>
@@ -47,6 +47,3 @@
   </div>
 </body>
 </html>
-
-
-
