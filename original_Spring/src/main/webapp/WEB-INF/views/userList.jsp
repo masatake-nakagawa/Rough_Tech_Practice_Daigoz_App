@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザー一覧表示画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">ユーザー一覧</div>

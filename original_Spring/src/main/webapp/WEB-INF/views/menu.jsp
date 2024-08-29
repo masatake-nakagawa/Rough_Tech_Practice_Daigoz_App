@@ -20,7 +20,7 @@
     String userName = (String) session.getAttribute("user_name");
     String roleId = (String) session.getAttribute("role_id");
   %>
-  <p><%= userName %>さん、こんにちは</p>
+  <p class="greeting"><%= userName %>さん、こんにちは</p>
   <div class="button-container">
     <p>
       <a href="userMenu" class="btn">ユーザー</a>

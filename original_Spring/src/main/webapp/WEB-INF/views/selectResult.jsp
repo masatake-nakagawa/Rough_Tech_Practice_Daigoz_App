@@ -5,7 +5,7 @@
 <html><head>
 <meta charset="UTF-8">
 <title>検索結果画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <c:if test="${not empty userList}">

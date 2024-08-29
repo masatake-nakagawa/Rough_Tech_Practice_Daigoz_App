@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>スケジュール一覧</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">スケジュール一覧</div>

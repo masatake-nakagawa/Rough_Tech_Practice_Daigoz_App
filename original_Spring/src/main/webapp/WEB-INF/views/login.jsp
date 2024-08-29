@@ -6,30 +6,6 @@
 <meta charset="UTF-8">
 <title>ログイン画面</title>
 <link href="commons.css" rel="stylesheet">
-<style>
-  .btn {
-    color: white;
-    text-align: center;
-    font-size: 20px; 
-    font-weight: bold;
-    background-color: #00bfff; 
-    border-radius: 20px;
-    cursor: pointer;
-    border: 0px;
-    padding: 10px 40px; 
-    text-decoration: none;
-  }
-  .header {
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-  .error {
-    color: red;
-    margin-top: 50px; /* エラーメッセージの位置を調整 */
-  }
-</style>
 </head>
 <body>
   <div class="header">ログイン画面</div>
@@ -56,3 +32,4 @@
   </div>
 </body>
 </html>
+

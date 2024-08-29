@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>出欠回答</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 <script>
 function toggleButton(button, eventId) {
     const buttons = document.querySelectorAll(`.response-btn[data-event-id="${eventId}"]`);
