@@ -22,6 +22,7 @@
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
+  <div class="header">登録画面</div><br>
   <p>
     <span class="required"></span>は必須です
   </p>

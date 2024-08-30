@@ -6,7 +6,7 @@
 <title>イベント登録結果画面</title>
 <link href="main.css" rel="stylesheet">
 </head>
-<body>
+<body><br>
  <div class="header">イベント登録完了</div>
   <p>イベントの登録が完了しました。</p>
   <div>

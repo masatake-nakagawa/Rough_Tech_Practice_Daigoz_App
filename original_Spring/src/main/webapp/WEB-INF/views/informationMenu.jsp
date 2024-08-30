@@ -24,10 +24,8 @@
   <div class="button-container">
     <% if (roleId == 1) { %>
       <p>
-        <form action="insertInformationForm" method="get">
-          <button type="submit" class="btn">イベント登録</button>
-        </form>
-      </p>
+  <a href="insertInformationForm" class="btn">イベント登録</a>
+</p>
      <p>
   <a href="scheduleView" class="btn">イベント編集</a>
 </p>

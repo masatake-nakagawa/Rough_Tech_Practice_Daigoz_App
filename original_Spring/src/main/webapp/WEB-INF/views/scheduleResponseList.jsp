@@ -60,7 +60,7 @@ function submitResponses() {
 </style>
 </head>
 <body>
-  <div class="header">出欠回答</div>
+  <div class="header">出欠回答</div><br>
   <table>
     <thead>
       <tr>
@@ -84,14 +84,14 @@ function submitResponses() {
           <td>${event.venue}</td>
           <td>${event.text}</td>
           <td>${event.number}</td>
-          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">参加</button></td>
-          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">不参加</button></td>
-          <td><button class="response-btn btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">保留</button></td>
+          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">参加</button></td>
+          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">不参加</button></td>
+          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">保留</button></td>
         </tr>
       </c:forEach>
     </tbody>
-  </table>
-  <button id="submit-btn" class="btn" disabled onclick="submitResponses()">回答</button>
-  <a href="informationMenu" class="btn">情報共有メニューへ戻る</a>
+  </table><br>
+  <button id="info-btn" class="btn" disabled onclick="submitResponses()">回答</button><br><br>
+  <a href="informationMenu">情報共有メニューへ戻る</a>
 </body>
 </html>

@@ -165,3 +165,21 @@ h1 {
 .form-group label {
   margin-left: -25px;
 }
+
+.info-btn{
+color: #000;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    background-size: 10px;
+    background-color: deepskyblue;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 0;
+    cursor: pointer;
+    border: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+    width: 70px;
+    display: inline-block;
+}
+
