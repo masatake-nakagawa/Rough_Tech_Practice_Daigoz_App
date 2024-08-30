@@ -137,11 +137,12 @@ h1 {
 }
 
 .form-container {
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: relative;
   top: 50px; /* ヘッダーの1行下まで上に配置 */
+  justify-content: center;
 }
 
 .form-group {
@@ -158,4 +159,8 @@ h1 {
   position: absolute;
   bottom: 20px;
   left: 10px;
+}
+
+.form-group label{
+	margin-left: -25px;
 }

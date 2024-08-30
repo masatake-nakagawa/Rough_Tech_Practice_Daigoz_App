@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード変更</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header"><b>パスワード変更</b></div>

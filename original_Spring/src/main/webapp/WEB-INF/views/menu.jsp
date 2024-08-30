@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>メニュー画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">メニュー画面</div>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>登録結果画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <p>実行者：<%= request.getAttribute("loggedInUserName") %></p>

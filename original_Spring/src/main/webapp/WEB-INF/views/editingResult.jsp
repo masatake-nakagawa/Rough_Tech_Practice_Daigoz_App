@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>イベント編集完了画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <p>イベントの編集が完了しました。</p>

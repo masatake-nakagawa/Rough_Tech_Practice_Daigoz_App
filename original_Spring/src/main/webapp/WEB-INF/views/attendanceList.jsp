@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>出欠一覧表示画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">出欠一覧</div>

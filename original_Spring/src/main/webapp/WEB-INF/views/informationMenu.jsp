@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>情報共有メニュー画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">情報共有メニュー画面</div>
@@ -21,7 +21,6 @@
     String roleIdStr = (String) session.getAttribute("role_id");
     int roleId = Integer.parseInt(roleIdStr);
   %>
-  <p><%= userName %>さん、こんにちは</p>
   <div class="button-container">
     <% if (roleId == 1) { %>
       <p>

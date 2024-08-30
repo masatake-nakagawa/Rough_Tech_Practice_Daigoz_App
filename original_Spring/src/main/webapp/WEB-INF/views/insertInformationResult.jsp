@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>イベント登録結果画面</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
  <div class="header">イベント登録完了</div>

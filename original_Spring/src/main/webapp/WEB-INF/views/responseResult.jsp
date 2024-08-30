@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>出欠回答完了</title>
-<link href="commons.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
 </head>
 <body>
   <p>出欠登録が完了しました。<br>
