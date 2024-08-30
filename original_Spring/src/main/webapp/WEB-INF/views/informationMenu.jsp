@@ -39,8 +39,8 @@
   <a href="scheduleView" class="btn">スケジュール表示</a>
 </p>
   </div>
-  <form action="logout" method="post">
-    <button type="submit" class="btn logout-btn">ログアウト</button>
-  </form>
+   <div>
+    <a href="menu">メニュー画面に戻る</a>
+  </div>
 </body>
 </html>

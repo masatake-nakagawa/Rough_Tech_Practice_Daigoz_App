@@ -21,7 +21,6 @@
     String roleIdStr = (String) session.getAttribute("role_id");
     int roleId = Integer.parseInt(roleIdStr);
   %>
-  <p><%= userName %>さん、こんにちは</p>
   <div class="button-container">
     <% if (roleId == 1) { %>
       <p>
@@ -38,9 +37,9 @@
       <a href="withdrawl" class="btn">退会</a>
     </p>
   </div>
-  <form action="logout" method="post">
-    <button type="submit" class="btn logout-btn">ログアウト</button>
-  </form>
+   <div>
+    <a href="menu">メニュー画面に戻る</a>
+  </div>
 </body>
 </html>
 

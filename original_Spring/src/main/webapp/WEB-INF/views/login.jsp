@@ -14,9 +14,9 @@
     document.body.style.backgroundImage = 'none';
   });
 </script>
-  <% if (request.getAttribute("errorMessage") != null) { %>
+<%--   <% if (request.getAttribute("errorMessage") != null) { %>
     <p class="error"><%= request.getAttribute("errorMessage") %></p>
-  <% } %>
+  <% } %> --%>
   <form action="login" method="post" class="form-container">
     <div class="form-group">
       <label>ID</label>
