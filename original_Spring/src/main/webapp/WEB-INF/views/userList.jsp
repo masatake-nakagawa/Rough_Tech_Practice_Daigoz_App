@@ -36,7 +36,7 @@
     </table>
   </c:if>
   <div>
-    <a href="menu">メニューに戻る</a>
+    <a href="userMenu">ユーザーメニューに戻る</a>
   </div>
 </body>
 </html>

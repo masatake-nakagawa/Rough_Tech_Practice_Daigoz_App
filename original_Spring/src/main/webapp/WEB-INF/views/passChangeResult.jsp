@@ -11,7 +11,7 @@
   <div class="header"><b>パスワード変更完了</b></div>
   <p>パスワードの変更が完了しました。</p>
   <div>
-    <a href="userMenu">メニュー画面へ戻る</a>
+    <a href="userMenu">ユーザーメニュー画面へ戻る</a>
   </div>
 </body>
 </html>

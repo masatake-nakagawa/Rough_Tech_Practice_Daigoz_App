@@ -9,8 +9,5 @@
 <body>
     <h1><strong>退会完了</strong></h1>
     <p>扇武館情報共有アプリからの退会が完了しました。<br>ご利用ありがとうございました。</p>
-    <div>
-    <a href="index">トップ画面に戻る</a>
-  </div>
    </body>
 </html>

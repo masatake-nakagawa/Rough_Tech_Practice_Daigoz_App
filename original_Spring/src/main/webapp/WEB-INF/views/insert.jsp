@@ -68,7 +68,7 @@
     <button type="submit">登録</button>
   </form>
   <div>
-    <a href="menu">メニューに戻る</a>
+    <a href="userMenu">ユーザーメニューに戻る</a>
   </div>
 </body>
 </html>

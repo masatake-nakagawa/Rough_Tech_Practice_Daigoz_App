@@ -1,31 +1,161 @@
 @charset "UTF-8";
 
-html, body {
-  height: 100%;
-  margin: 0;
+fieldset {
+  border: none;
+  text-align: center; /* フィールドセット内の要素を中央揃え */
 }
 
-body {
-  background-image: url('resources/images/AA0ECE48-9AD7-4ACD-A435-1847F189E2CE.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+fieldset label {
+  display: inline-block;
+  width: 43px;
 }
 
-h1 {
-  color: white;
-  font-size: 4em;
+fieldset.label-60 label {
+  width: 60px;
 }
 
-a.btn {
+fieldset.label-130 label {
+  width: 130px;
+}
+
+fieldset div {
+  margin: 5px;
+}
+
+form ~ div, table ~ div {
+  margin-top: 10px;
+}
+
+table, table th, table td {
+  border: solid 1px;
+}
+
+input[readonly] {
+  background: #CCCCCC;
+  color: black;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 画面全体の高さを使用 */
+  flex-direction: column; /* 縦方向に配置 */
+}
+
+.button-container {
+  text-align: center; /* ボタンを中央に配置 */
+}
+
+.required::before {
+  content: "※";
+  color: red;
+}
+
+.error {
+  color: red;
+}
+
+/* a.btnを削除 */
+.btn {
   color: white;
   text-align: center;
-  font-size: 30px; 
+  font-size: 20px; 
   font-weight: bold;
-  background-color: #00bfff;
+  background-color: #00bfff; 
   border-radius: 20px;
   cursor: pointer;
   border: 0px;
   padding: 10px 40px; 
   text-decoration: none;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 5em; /* 文字サイズを3倍に */
+  height: 90vh;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh; /* ヘッダーの高さを調整 */
+  text-align: center;
+}
+
+.greeting {
+  margin-top: 50px; /* 適切なスペースを追加 */
+  text-align: center; /* 中央揃え */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* ボタンを中央に配置 */
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* ボタンを中央に配置 */
+}
+
+.logout-btn {
+  color: black;
+  background-color: lightgray; /* 背景色をライトグレーに変更 */
+  border-radius: 10px; /* 四角にするためにボーダー半径を0に設定 */
+  padding: 5px 20px; /* パディングを半分に変更 */
+  text-decoration: none;
+  cursor: pointer;
+  border: 0px;
+  font-size: 16px; /* 文字サイズを少し小さく */
+  font-weight: normal; /* 文字を細く */
+}
+
+.menu-title {
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.header {
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50px; /* ヘッダーの1行下まで上に配置 */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.return-link {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
 }
