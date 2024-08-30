@@ -7,7 +7,7 @@
 <title>パスワード変更完了</title>
 <link href="main.css" rel="stylesheet">
 </head>
-<body>
+<body><br>
   <div class="header"><b>パスワード変更完了</b></div>
   <p>パスワードの変更が完了しました。</p>
   <div>

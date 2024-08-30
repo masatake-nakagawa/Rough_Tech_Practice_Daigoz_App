@@ -2,16 +2,20 @@
 
 fieldset {
   border: none;
-  text-align: center; /* フィールドセット内の要素を中央揃え */
+  text-align: left; /* フィールドセット内の要素を左揃え */
 }
 
 fieldset label {
   display: inline-block;
-  width: 43px;
+  width: 100px; /* ラベルの幅を調整 */
 }
 
 fieldset.label-60 label {
-  width: 60px;
+  width: 200px; /* ラベルの幅を調整 */
+}
+
+fieldset.label-200 label {
+  width: 40px; /* ラベルの幅を調整 */
 }
 
 fieldset.label-130 label {
@@ -44,6 +48,10 @@ input[readonly] {
 }
 
 .button-container {
+  display: flex;
+  justify-content: center; /* ボタンを中央に配置 */
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* ボタンを中央に配置 */
   text-align: center; /* ボタンを中央に配置 */
 }
 
@@ -56,7 +64,6 @@ input[readonly] {
   color: red;
 }
 
-/* a.btnを削除 */
 .btn {
   color: white;
   text-align: center;
@@ -68,6 +75,8 @@ input[readonly] {
   border: 0px;
   padding: 10px 40px; 
   text-decoration: none;
+  width: 200px; /* ここで横幅を指定 */
+  display: inline-block;
 }
 
 .btn-container {
@@ -86,7 +95,7 @@ h1 {
 .form-group {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 左揃えに変更 */
 }
 
 .centered-header {
@@ -99,13 +108,6 @@ h1 {
 
 .greeting {
   margin-top: 50px; /* 適切なスペースを追加 */
-}
-
-.button-container {
-  display: flex;
-  justify-content: center; /* ボタンを中央に配置 */
-  flex-direction: column; /* 縦方向に配置 */
-  align-items: center; /* ボタンを中央に配置 */
 }
 
 .logout-btn {
@@ -160,6 +162,6 @@ h1 {
   left: 10px;
 }
 
-.form-group label{
-	margin-left: -25px;
+.form-group label {
+  margin-left: -25px;
 }

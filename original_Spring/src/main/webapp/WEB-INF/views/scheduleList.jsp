@@ -14,7 +14,7 @@
   <table>
     <thead>
       <tr>
-        <th>イベントID</th>
+        <th>番号</th>
         <th>イベント名</th>
         <th>日時</th>
         <th>場所</th>
@@ -43,8 +43,8 @@
   </c:forEach>
 </tbody>
   </table>
-  <div>
-    <a href="informationMenu" class="btn">情報共有メニューへ戻る</a>
+     <div>
+    <a href="informationMenu">情報共有メニューへ戻る</a>
   </div>
 </body>
 </html>

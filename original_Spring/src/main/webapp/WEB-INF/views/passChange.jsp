@@ -10,6 +10,7 @@
 <body>
   <div class="header"><b>パスワード変更</b></div>
   <form action="changePassword" method="post">
+    <br>
     <div>
       <label>現在のパスワード</label>
       <input type="password" name="currentPassword" required>
@@ -19,11 +20,12 @@
       <input type="password" name="newPassword" required>
     </div>
     <div>
-      <label>新しいパスワード（確認用）</label>
+      <label>新しいパスワード</label>
       <input type="password" name="confirmPassword" required>
+      <br>（確認用）
     </div>
-    <div>
-      <button type="submit">変更</button>
+    <div><p>
+      <button type="submit">変更</button></p>
     </div>
   </form>
   <div>

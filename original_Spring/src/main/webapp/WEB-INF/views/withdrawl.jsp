@@ -9,7 +9,7 @@
 <body>
     <h1><strong>退会</strong></h1>
     <p>アカウントを削除し、<br>扇武館情報共有アプリから退会しますか？</p>
-  <div class="button-container">
+  <div>
     <form action="withdrawl/withdrawlResult" method="post">
       <button type="submit" class="btn">退会する</button>
     </form>

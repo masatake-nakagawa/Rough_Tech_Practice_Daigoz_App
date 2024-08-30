@@ -24,7 +24,7 @@
   <div class="button-container">
     <% if (roleId == 1) { %>
       <p>
-        <a href="userList" class="btn">ユーザー一覧表示</a>
+        <a href="userList" class="btn">ユーザー一覧</a>
       </p>
       <p>
         <a href="insert" class="btn">新規登録</a>
@@ -42,4 +42,5 @@
   </div>
 </body>
 </html>
+
 

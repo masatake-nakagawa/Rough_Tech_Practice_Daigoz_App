@@ -18,6 +18,7 @@
     <p class="error"><%= request.getAttribute("errorMessage") %></p>
   <% } %> --%>
   <form action="login" method="post" class="form-container">
+   <fieldset class="label-200">
     <div class="form-group">
       <label>ID</label>
       <input type="text" name="loginId">
@@ -29,6 +30,7 @@
     <div class="form-group">
       <button type="submit" class="btn">ログイン</button>
     </div>
+    </fieldset>
   </form>
   <div class="return-link">
     <a href="index">トップ画面に戻る</a>
