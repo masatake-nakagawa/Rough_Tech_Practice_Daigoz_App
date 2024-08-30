@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -99,6 +100,8 @@ public class InformationMenuController {
         }
 
         List<Event> events = eventService.getAllEvents();
+        // イベントリストをeventIdでソート
+        events.sort(Comparator.comparing(Event::getEventId));
         model.addAttribute("events", events);
 
         String roleIdStr = (String) session.getAttribute("role_id");
@@ -153,6 +156,7 @@ public class InformationMenuController {
 
         return "responseResult";
     }
+
     @GetMapping("/attendanceList")
     public String attendanceList(@RequestParam("eventId") Long eventId, Model model) {
         if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
@@ -164,17 +168,25 @@ public class InformationMenuController {
 
         return "attendanceList";
     }
+
     @GetMapping("/eventAttendance")
     public String eventAttendance(@RequestParam("eventId") Long eventId, Model model) {
         if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
             return "redirect:/index";
         }
 
-        List<Attendance> attendanceList = attendanceService.getAttendancesByEventId(eventId);
-        model.addAttribute("attendanceList", attendanceList);
+        try {
+            List<Attendance> attendanceList = attendanceService.getAttendancesByEventId(eventId);
+            model.addAttribute("attendanceList", attendanceList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("errorMessage", "データベースからのデータ取得に失敗しました。");
+            return "error";
+        }
 
         return "attendanceList";
     }
+
     @GetMapping("/editEventInfo")
     public String editEventInfo(@RequestParam("eventId") Long eventId, @RequestParam("dateAndTime") String dateAndTime, Model model) {
         if (session == null || session.getAttribute("user_name") == null || session.getAttribute("role_id") == null) {
@@ -197,7 +209,4 @@ public class InformationMenuController {
 
         return "informationEditing"; // ここで適切なビュー名を返す
     }
-
-
 }
-

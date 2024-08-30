@@ -11,7 +11,6 @@
   <div class="header">出欠一覧</div>
   <c:if test="${not empty attendanceList}">
     <table>
-      <caption>出欠一覧</caption>
       <thead>
         <tr>
           <th>イベントID</th>

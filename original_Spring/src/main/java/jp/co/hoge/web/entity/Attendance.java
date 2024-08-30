@@ -16,6 +16,7 @@ public class Attendance {
     private Long eventId;
     private Long userId;
     private String status;
+    private String eventName; // 新しく追加
 
     // ゲッターとセッター
     public Long getAttendanceId() {
@@ -48,5 +49,13 @@ public class Attendance {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getEventName() { // 新しく追加
+        return eventName;
+    }
+
+    public void setEventName(String eventName) { // 新しく追加
+        this.eventName = eventName;
     }
 }

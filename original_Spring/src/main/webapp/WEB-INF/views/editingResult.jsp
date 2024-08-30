@@ -6,6 +6,7 @@
 <title>イベント編集完了画面</title>
 <link href="main.css" rel="stylesheet">
 </head>
+ <div class="header">イベント編集完了画面</div><br>
 <body>
   <p>イベントの編集が完了しました。</p>
   <div>
