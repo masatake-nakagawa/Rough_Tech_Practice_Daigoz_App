@@ -16,6 +16,7 @@
           <th>イベントID</th>
           <th>ユーザーID</th>
           <th>ステータス</th>
+          <th>イベント名</th>
         </tr>
       </thead>
       <tbody>

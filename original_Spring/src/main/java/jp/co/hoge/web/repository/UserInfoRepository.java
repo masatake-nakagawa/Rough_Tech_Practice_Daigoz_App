@@ -15,7 +15,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     List<UserInfo> findByUserNameAndTelephone(@Param("userName") String userName, @Param("tel") String tel);
 
     @Query("SELECT u FROM UserInfo u WHERE u.loginId = :loginId AND u.password = :password")
-    UserInfo findByLoginIdAndPassword(@Param("loginId") String loginId, @Param("password") String password);
+    List<UserInfo> findByLoginIdAndPassword(@Param("loginId") String loginId, @Param("password") String password);
 
     @Query("SELECT r FROM Role r")
     List<Role> findAllRoles();
