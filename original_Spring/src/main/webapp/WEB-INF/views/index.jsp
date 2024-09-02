@@ -8,7 +8,7 @@
 <link href="main.css" rel="stylesheet">
 <style>
   body {
-    background-image: url('resources/images/AA0ECE48-9AD7-4ACD-A435-1847F189E2CE.jpg');
+    background-image: url('resources/images/lightfieldstudios190326107.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
