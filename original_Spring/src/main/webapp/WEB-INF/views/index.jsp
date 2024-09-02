@@ -28,7 +28,7 @@
 </head>
 <body>
   <div class="centered-header">
-    <h1>扇武館<br>情報共有アプリ</h1>
+    <h1>剣道場<br>情報共有アプリ</h1>
   </div>
   <div class="btn-container">
     <a href="login" class="btn" onclick="removeBackground()">始める</a>
