@@ -7,6 +7,7 @@
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
+<div class="header">登録完了</div><br>
   <p>実行者：<%= request.getAttribute("loggedInUserName") %></p>
   <p>新規ユーザーの登録が完了しました。</p>
   <div>
