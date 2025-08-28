@@ -1,5 +1,7 @@
 package jp.co.hoge.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +36,14 @@ public class PasswordChangeController {
             return "redirect:/index";
         }
 
-        UserInfo user = userInfoRepository.findByLoginIdAndPassword(loginId, currentPassword);
+        List<UserInfo> users = userInfoRepository.findByLoginIdAndPassword(loginId, currentPassword);
 
-        if (user == null) {
+        if (users.isEmpty()) {
             model.addAttribute("error", "現在のパスワードが正しくありません。");
             return "passChange";
         }
+
+        UserInfo user = users.get(0);
 
         if (!newPassword.equals(confirmPassword)) {
             model.addAttribute("error", "新しいパスワードが一致しません。");

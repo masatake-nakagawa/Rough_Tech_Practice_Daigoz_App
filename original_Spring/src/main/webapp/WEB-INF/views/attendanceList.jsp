@@ -8,15 +8,15 @@
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
-  <div class="header">出欠一覧</div>
+  <div class="header">出欠一覧</div><br>
   <c:if test="${not empty attendanceList}">
     <table>
-      <caption>出欠一覧</caption>
       <thead>
         <tr>
           <th>イベントID</th>
           <th>ユーザーID</th>
           <th>ステータス</th>
+          <th>イベント名</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +25,7 @@
             <td>${attendance.eventId}</td>
             <td>${attendance.userId}</td>
             <td>${attendance.status}</td>
+             <td>${attendance.eventName}</td>
           </tr>
         </c:forEach>
       </tbody>

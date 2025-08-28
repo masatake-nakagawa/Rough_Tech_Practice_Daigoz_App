@@ -16,6 +16,19 @@ public class Attendance {
     private Long eventId;
     private Long userId;
     private String status;
+    private String eventName; // 新しく追加
+
+    // デフォルトコンストラクタ
+    public Attendance() {
+    }
+
+    // パラメータ付きコンストラクタ
+    public Attendance(Long eventId, Long userId, String status, String eventName) {
+        this.eventId = eventId;
+        this.userId = userId;
+        this.status = status;
+        this.eventName = eventName;
+    }
 
     // ゲッターとセッター
     public Long getAttendanceId() {
@@ -48,5 +61,24 @@ public class Attendance {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    @Override
+    public String toString() {
+        return "Attendance{" +
+                "attendanceId=" + attendanceId +
+                ", eventId=" + eventId +
+                ", userId=" + userId +
+                ", status='" + status + '\'' +
+                ", eventName='" + eventName + '\'' +
+                '}';
     }
 }

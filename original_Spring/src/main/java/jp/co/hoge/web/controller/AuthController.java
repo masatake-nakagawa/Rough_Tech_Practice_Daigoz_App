@@ -1,5 +1,7 @@
 package jp.co.hoge.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,11 +39,13 @@ public class AuthController {
             return "login";
         }
 
-        UserInfo user = userInfoRepository.findByLoginIdAndPassword(loginId, password);
-        if (user == null) {
+        List<UserInfo> users = userInfoRepository.findByLoginIdAndPassword(loginId, password);
+        if (users.isEmpty()) {
             model.addAttribute("errorMessage", "IDまたはPASSが間違っています");
             return "login";
         }
+
+        UserInfo user = users.get(0);
         session.setAttribute("user_id", user.getUserId()); 
         session.setAttribute("login_id", loginId); // ここでlogin_idをセッションに設定
         session.setAttribute("user_name", user.getUserName());
@@ -55,5 +59,4 @@ public class AuthController {
         session.invalidate();
         return "logout";
     }
-
 }

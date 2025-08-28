@@ -66,6 +66,6 @@ public class EventEditController {
 
         return "editingResult";
     }
-}
 
+}
 

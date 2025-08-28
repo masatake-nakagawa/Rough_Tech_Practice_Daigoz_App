@@ -33,9 +33,10 @@ function submitResponses() {
     const responses = [];
     events.forEach(event => {
         const eventId = event.getAttribute('data-event-id');
+        const eventName = event.querySelector('.event-name').textContent;
         const selectedButton = event.querySelector('.response-btn.selected');
         const status = selectedButton ? selectedButton.textContent : '';
-        responses.push({ eventId: eventId, status: status });
+        responses.push({ eventId: eventId, eventName: eventName, status: status });
     });
 
     const form = document.createElement('form');
@@ -65,7 +66,7 @@ function submitResponses() {
     <thead>
       <tr>
         <th>イベントID</th>
-        <th>イベント名</th>
+        <th class="event-name">イベント名</th>
         <th>日時</th>
         <th>場所</th>
         <th>詳細</th>
@@ -79,19 +80,19 @@ function submitResponses() {
       <c:forEach var="event" items="${events}">
         <tr class="event-row" data-event-id="${event.eventId}">
           <td>${event.eventId}</td>
-          <td>${event.eventName}</td>
+          <td class="event-name">${event.eventName}</td>
           <td>${event.dateAndTime}</td>
           <td>${event.venue}</td>
           <td>${event.text}</td>
           <td>${event.number}</td>
-          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">参加</button></td>
-          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">不参加</button></td>
-          <td><button class="info-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">保留</button></td>
+          <td><button class="response-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">参加</button></td>
+          <td><button class="response-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">不参加</button></td>
+          <td><button class="response-btn" data-event-id="${event.eventId}" onclick="toggleButton(this, ${event.eventId})">保留</button></td>
         </tr>
       </c:forEach>
     </tbody>
   </table><br>
-  <button id="info-btn" class="btn" disabled onclick="submitResponses()">回答</button><br><br>
+  <button id="submit-btn" class="btn" disabled onclick="submitResponses()">回答</button><br><br>
   <a href="informationMenu">情報共有メニューへ戻る</a>
 </body>
 </html>

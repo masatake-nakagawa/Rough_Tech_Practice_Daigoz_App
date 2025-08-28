@@ -36,7 +36,8 @@
         <a href="eventResponse?eventId=${event.eventId}" class="info-btn">出欠回答</a>
         <c:if test="${roleId == 1}">
           <a href="editEventInfo?eventId=${event.eventId}&dateAndTime=${fn:substringBefore(event.dateAndTime, '.')}" class="info-btn">編集</a>                                      
-          <a href="eventAttendance?eventId=${event.eventId}" class="info-btn">出欠確認</a>
+      <%-- <a href="attendanceList?eventId=${event.eventId}" class="info-btn">出欠確認</a>  --%>
+          
         </c:if>
       </td>
     </tr>
