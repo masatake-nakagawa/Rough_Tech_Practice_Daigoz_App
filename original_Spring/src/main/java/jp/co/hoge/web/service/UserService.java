@@ -16,8 +16,7 @@ public class UserService {
     public void deleteUserByLoginId(String loginId) {
         userInfoRepository.deleteByLoginId(loginId);
     }
-
     public boolean existsById(Long userId) {
-        return userInfoRepository.existsById(userId);
+        return !userInfoRepository.existsById(userId);
     }
 }

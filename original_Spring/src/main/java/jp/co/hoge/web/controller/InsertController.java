@@ -59,25 +59,6 @@ public class InsertController {
                          Model model) {
         StringBuilder errorMessage = new StringBuilder();
 
-        if (loginId.isEmpty()) {
-            errorMessage.append("IDは必須です。<br>");
-        }
-        if (userName.isEmpty()) {
-            errorMessage.append("名前は必須です。<br>");
-        }
-        if (tel.isEmpty()) {
-            errorMessage.append("TELは必須です。<br>");
-        }
-        if (pass.isEmpty()) {
-            errorMessage.append("PASSは必須です。<br>");
-        }
-        if (mail.isEmpty()) { // 追加
-            errorMessage.append("MAILは必須です。<br>");
-        }
-        if (!pass.equals(rePass)) { // 追加
-            errorMessage.append("パスワードが一致しません。<br>");
-        }
-
         if (errorMessage.length() > 0) {
             List<Role> roles = userInfoRepository.findAllRoles();
             model.addAttribute("roles", roles);
