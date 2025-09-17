@@ -12,7 +12,7 @@
     <p>
       ログアウトしました。<br> ※３秒後にTOP画面に遷移します。
     </p>
-    <meta http-equiv="refresh" content="3; URL=/5_3_spring/index"/>  
+    <meta http-equiv="refresh" content="3; URL=/index"/>  
   </div>
 </body>
 </html>
