@@ -14,9 +14,12 @@ public class UserService {
 
     @Transactional
     public void deleteUserByLoginId(String loginId) {
+        if (!userInfoRepository.existsByLoginId(loginId)) {
+            throw new RuntimeException("ユーザーは存在しません");
+        }
         userInfoRepository.deleteByLoginId(loginId);
     }
     public boolean existsById(Long userId) {
-        return !userInfoRepository.existsById(userId);
+        return userInfoRepository.existsById(userId);
     }
 }

@@ -66,7 +66,7 @@ public class InsertController {
             return "insert";
         }
 
-        if (userInfoRepository.existsByLoginId(loginId)) {
+        if (!userInfoRepository.existsByLoginId(loginId)) {
             List<Role> roles = userInfoRepository.findAllRoles();
             model.addAttribute("roles", roles);
             model.addAttribute("errorMessage", "IDが重複しています");
@@ -91,4 +91,3 @@ public class InsertController {
     }
 
 }
-

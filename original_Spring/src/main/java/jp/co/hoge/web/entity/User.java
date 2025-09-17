@@ -12,7 +12,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    @Size(min = 8, max = 20, message = "{password.size}")
     private String password;
 
     // デフォルトコンストラクタ
