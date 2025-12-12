@@ -21,6 +21,7 @@
 	</properties>
 
 	<dependencies>
+<!-- JSP -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -31,11 +32,12 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-
+<!-- JBDC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -44,6 +46,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+<!-- postgres SQL -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -65,11 +68,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- 不要
 		<dependency>
 	        <groupId>com.example</groupId>
 	        <artifactId>non-existent-library</artifactId>
 	        <version>1.0.0</version>
 	    </dependency>
+	    -->
 	</dependencies>
 
 	<build>
