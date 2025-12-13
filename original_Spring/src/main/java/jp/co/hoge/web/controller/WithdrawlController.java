@@ -28,7 +28,9 @@ public class WithdrawlController {
         String loginId = (String) session.getAttribute("login_id");
 
         // loginIdがnullでないことを確認
-        if (loginId != null) {
+        if (loginId == null || loginId.isEmpty()) {
+        	return "redirect:/login";
+        }
             // ユーザー情報をデータベースから削除
             userService.deleteUserByLoginId(loginId);
 
@@ -40,8 +42,9 @@ public class WithdrawlController {
         }
 
         // loginIdがnullの場合のリダイレクト先を指定
-        return "redirect:/userMenu";
-    }
+       //if (loginId == null || loginId.isEmpty()) {
+    	   //return"redirect:/login";
+       //}
 
     @GetMapping("/withdrawlResult")
     public String showWithdrawlResultPage() {

@@ -1,6 +1,6 @@
 package jp.co.hoge.web.controller;
 
-import java.util.List;
+//import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -39,13 +39,13 @@ public class AuthController {
             return "login";
         }
 
-        List<UserInfo> users = userInfoRepository.findByLoginIdAndPassword(loginId, password);
-        if (users.isEmpty()) {
+        UserInfo user = userInfoRepository.findByLoginIdAndPassword(loginId, password); //List不要
+        if (user == null) { //isEmpty()→null
             model.addAttribute("errorMessage", "IDまたはPASSが間違っています");
             return "login";
         }
 
-        UserInfo user = users.get(0);
+        //UserInfo user = users.get(0);
         session.setAttribute("user_id", user.getUserId()); 
         session.setAttribute("login_id", loginId); // ここでlogin_idをセッションに設定
         session.setAttribute("user_name", user.getUserName());

@@ -58,6 +58,28 @@ public class InsertController {
                          @RequestParam("mail") String mail, // 追加
                          Model model) {
         StringBuilder errorMessage = new StringBuilder();
+        //入力チェック処理追加　バグ３
+        if (loginId == null || loginId.trim().isEmpty()) {
+            errorMessage.append("IDは必須です<br>");
+        }
+        if (loginId == null || userName.trim().isEmpty()) {
+            errorMessage.append("名前は必須です<br>");
+        }
+        if (mail == null || mail.trim().isEmpty()) {
+            errorMessage.append("メールアドレスは必須です<br>");
+        }
+        if (mail == null || tel.trim().isEmpty()) {
+            errorMessage.append("電話番号は必須です<br>");
+        }
+        if (pass == null || pass.trim().isEmpty()) {
+            errorMessage.append("パスワードは必須です<br>");
+        }
+        if (rePass == null || rePass.trim().isEmpty()) {
+            errorMessage.append("パスワード（再入力）は必須です<br>");
+        }
+        if (pass != null && rePass != null && !pass.equals(rePass)) {
+            errorMessage.append("パスワードとパスワード（再入力）が一致しません<br>");
+        }
 
         if (errorMessage.length() > 0) {
             List<Role> roles = userInfoRepository.findAllRoles();
@@ -66,7 +88,7 @@ public class InsertController {
             return "insert";
         }
 
-        if (!userInfoRepository.existsByLoginId(loginId)) {
+        if (userInfoRepository.existsByLoginId(loginId)) {
             List<Role> roles = userInfoRepository.findAllRoles();
             model.addAttribute("roles", roles);
             model.addAttribute("errorMessage", "IDが重複しています");

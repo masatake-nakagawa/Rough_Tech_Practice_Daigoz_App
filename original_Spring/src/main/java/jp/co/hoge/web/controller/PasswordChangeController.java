@@ -1,6 +1,6 @@
 package jp.co.hoge.web.controller;
 
-import java.util.List;
+//import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -36,14 +36,14 @@ public class PasswordChangeController {
             return "redirect:/index";
         }
 
-        List<UserInfo> users = userInfoRepository.findByLoginIdAndPassword(loginId, currentPassword);
+        UserInfo user = userInfoRepository.findByLoginIdAndPassword(loginId, currentPassword);
 
-        if (users.isEmpty()) {
+        if (user == null) {
             model.addAttribute("error", "現在のパスワードが正しくありません。");
             return "passChange";
         }
 
-        UserInfo user = users.get(0);
+        //UserInfo user = users.get(0);
 
         if (!newPassword.equals(confirmPassword)) {
             model.addAttribute("error", "新しいパスワードが一致しません。");

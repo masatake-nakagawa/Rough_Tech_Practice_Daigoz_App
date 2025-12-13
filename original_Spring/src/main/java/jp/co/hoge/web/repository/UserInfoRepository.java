@@ -15,7 +15,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     List<UserInfo> findByUserNameAndTelephone(@Param("userName") String userName, @Param("tel") String tel);
 
     @Query("SELECT u FROM UserInfo u WHERE u.loginId = :loginId AND u.password = :password")
-    List<UserInfo> findByLoginIdAndPassword(@Param("loginId") String loginId, @Param("password") String password);
+    UserInfo findByLoginIdAndPassword(@Param("loginId") String loginId, @Param("password") String password); //ログインIDとパスワードでログイン判定
 
     @Query("SELECT r FROM Role r")
     List<Role> findAllRoles();
@@ -26,11 +26,12 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     Long findMaxUserId();
 
     @Query("SELECT u FROM UserInfo u WHERE u.mail = :mail")
-    UserInfo findByEmail(@Param("mail") String mail);
+    UserInfo findByMail(@Param("mail") String mail); //findByEmail→findByMail
 
     // ユーザー情報を削除するメソッドを追加
-    void deleteById(Long userId);
-
+    //void deleteById(Long userId);
+    boolean existsByMail(String mail);
+    
     // loginIdを使用してユーザー情報を削除するメソッドを追加
     void deleteByLoginId(String loginId);
 }

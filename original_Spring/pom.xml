@@ -68,7 +68,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- 不要
+		<!-- バグ1:↓不要
 		<dependency>
 	        <groupId>com.example</groupId>
 	        <artifactId>non-existent-library</artifactId>
