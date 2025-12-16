@@ -14,9 +14,11 @@
     document.body.style.backgroundImage = 'none';
   });
 </script>
-<%--   <% if (request.getAttribute("errorMessage") != null) { %>
+<!-- コメントアウトを削除 -->
+<<% if (request.getAttribute("errorMessage") != null) { %>
     <p class="error"><%= request.getAttribute("errorMessage") %></p>
-  <% } %> --%>
+  <% } %>
+  
   <form action="login" method="post" class="form-container">
    <fieldset class="label-200">
     <div class="form-group">
