@@ -32,22 +32,24 @@ public class WithdrawlController {
             // ユーザー情報をデータベースから削除
             userService.deleteUserByLoginId(loginId);
 
-            // セッションを無効化
+            // セッションを無効化（ログアウト状態にする）
             session.invalidate();
 
-            // 退会後のリダイレクト先を指定
-            return "redirect:/withdrawl/withdrawlResult";
+            // --- 修正箇所 ---
+            // 直接 "/withdrawlResult" と書くと @PostMapping を再度探してしまうため、
+            // 明示的に完了画面のURL（/withdrawl/withdrawlResult）へリダイレクトします。
+            // 修正後、下の showWithdrawlResultPage メソッドが呼ばれるようになります。
+            return "redirect:/withdrawl/withdrawlResult"; 
         }
 
         // loginIdがnullの場合のリダイレクト先を指定
         return "redirect:/userMenu";
     }
 
+    // このメソッドが "/withdrawl/withdrawlResult" への GET アクセスを受け取ります
     @GetMapping("/withdrawlResult")
+    @SuppressWarnings("unused")
     public String showWithdrawlResultPage() {
         return "withdrawlResult"; // withdrawlResult.jspを表示
     }
 }
-
-
-
