@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Maven Build - Java 21 Upgrade",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}\\original_Spring && mvn clean package",
+			"group": "build"
+		}
+	]
+}
