@@ -58,6 +58,35 @@ public class InsertController {
                          @RequestParam("mail") String mail, // 追加
                          Model model) {
         StringBuilder errorMessage = new StringBuilder();
+        
+        if (loginId.isEmpty()) {
+        	errorMessage.append("IDは必須です<br>");
+        }
+        
+        if (userName.isEmpty()) {
+        	errorMessage.append("名前は必須です<br>");
+        }
+        
+        if (mail.isEmpty()) {
+        	errorMessage.append("メールアドレスは必須です<br>");
+        }
+        
+        if (tel.isEmpty()) {
+        	errorMessage.append("電話番号は必須です<br>");
+        }
+        
+        if (pass.isEmpty()) {
+        	errorMessage.append("パスワードは必須です<br>");
+        }
+        
+        if (rePass.isEmpty()) {
+        	errorMessage.append("パスワード（再入力）は必須です<br>");
+        }
+        
+        if (!pass.equals(rePass)) {
+        	errorMessage.append("パスワードが異なります<br>");
+        }
+        
 
         if (errorMessage.length() > 0) {
             List<Role> roles = userInfoRepository.findAllRoles();
