@@ -58,6 +58,38 @@ public class InsertController {
                          @RequestParam("mail") String mail, // 追加
                          Model model) {
         StringBuilder errorMessage = new StringBuilder();
+        
+        if (loginId == null || loginId.isBlank()) {
+        	errorMessage.append("IDを入力してください。<br>"); // 空チェック、エラーメッセージ追加
+        }
+        
+        if (userName == null || userName.isBlank()) {
+        	errorMessage.append("名前を入力してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (tel == null || tel.isBlank()) {
+        	errorMessage.append("電話番号を入力してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (pass == null || pass.isBlank()) {
+        	errorMessage.append("パスワードを入力してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (rePass == null || rePass.isBlank()) {
+        	errorMessage.append("パスワード（再入力）を入力してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (roleId == null || roleId.isBlank()) {
+        	errorMessage.append("権限を選択してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (mail == null || mail.isBlank()) {
+        	errorMessage.append("メールアドレスを入力してください。<br>");  // 空チェック、エラーメッセージ追加
+        }
+        
+        if (pass != null && !pass.isBlank() && !pass.equals(rePass)) {
+        	errorMessage.append("パスワードと再入力パスワードが一致しません。<br>"); // パスワードと再入力パスワードの比較チェック、エラーメッセージ追加
+        }
 
         if (errorMessage.length() > 0) {
             List<Role> roles = userInfoRepository.findAllRoles();
@@ -66,7 +98,7 @@ public class InsertController {
             return "insert";
         }
 
-        if (!userInfoRepository.existsByLoginId(loginId)) {
+        if (userInfoRepository.existsByLoginId(loginId)) { // 「!」削除修正
             List<Role> roles = userInfoRepository.findAllRoles();
             model.addAttribute("roles", roles);
             model.addAttribute("errorMessage", "IDが重複しています");
