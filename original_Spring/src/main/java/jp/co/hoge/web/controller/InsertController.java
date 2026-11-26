@@ -79,10 +79,6 @@ public class InsertController {
         	errorMessage.append("パスワード（再入力）を入力してください。<br>");  // 空チェック、エラーメッセージ追加
         }
         
-        if (roleId == null || roleId.isBlank()) {
-        	errorMessage.append("権限を選択してください。<br>");  // 空チェック、エラーメッセージ追加
-        }
-        
         if (mail == null || mail.isBlank()) {
         	errorMessage.append("メールアドレスを入力してください。<br>");  // 空チェック、エラーメッセージ追加
         }
